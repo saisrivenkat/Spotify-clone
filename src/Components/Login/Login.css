@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.login{
+    background-color: black;
+    height: 100vh;
+}
+.login img{
+    object-fit: contain;
+    width: auto;
+    height: 250px;
+}
+.login a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: medium;
+    padding: 10px 25px;
+    border-radius: 10px;
+    background-color:yellowgreen;
+}

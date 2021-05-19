@@ -1,0 +1,34 @@
+.sidebar{
+    height: 100vh;
+    min-width: 245px;
+    border: 1px solid black;
+    background-color: black;
+    flex: 0.2;
+}
+.spotify-logo{
+    height: 40px;
+    color:white 
+}
+.item{
+     padding:10px 20px;
+     margin:5px 10px;
+     border-radius:5px;
+     cursor:pointer
+
+}
+.item .text{
+    color:#B3B3B3;
+    margin:0 0 0 10px;
+}
+.item:hover > .text ,.item:hover>.icons{
+    color:white
+}
+.item .icons{
+    color:#B3B3B3
+}
+.active{
+    background-color:#282828;   
+}
+.active>.text , .active>.icons{
+    color:white
+}

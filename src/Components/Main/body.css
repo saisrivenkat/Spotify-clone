@@ -1,0 +1,12 @@
+.body{
+    flex: 0.8;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    overflow-y:overlay; 
+    background-color: #1A1A1A;
+    overflow-y: overlay;
+}
+.body::-webkit-scrollbar {
+    display: none;
+  }
