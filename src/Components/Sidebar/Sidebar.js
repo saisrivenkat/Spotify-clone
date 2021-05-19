@@ -11,7 +11,7 @@ import SidebarItems from './Components/SidebarItems'
 import './sidebar.css'
 
 const Sidebar = () => {
-    const [{ playlists }, dispatch] = useStateProviderValue();
+    const [{ user_playlists }, dispatch] = useStateProviderValue();
     const items = [
         { name: "Home", icon: <HomeIcon className="icons" />, id: 1 },
         { name: "Search", icon: <SearchIcon className="icons" />, id: 2 },
@@ -40,8 +40,8 @@ const Sidebar = () => {
                     <span className="text" style={{ color: "#B3B3B3", margin: "0 0 0 10px" }}>Liked Songs</span>
                 </div>
             </div>
-            {playlists.items ?
-                playlists.items.map((item) => (
+            {user_playlists.items ?
+                user_playlists.items.map((item) => (
                     <p>{item.name}</p>
                 ))
                 : <h1>Not loaded...</h1>}

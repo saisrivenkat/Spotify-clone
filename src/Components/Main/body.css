@@ -6,6 +6,7 @@
     overflow-y:overlay; 
     background-color: #1A1A1A;
     overflow-y: overlay;
+    padding-bottom: 50px;
 }
 .body::-webkit-scrollbar {
     display: none;

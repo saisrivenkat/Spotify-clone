@@ -8,9 +8,7 @@ import { useStateProviderValue } from './StateProvider'
 const spotifyApi = new SpotifyWebApi();
 
 function App() {
-  const [access_token, settoken] = React.useState(null)
-
-  const [{ user, u_token }, dispatch] = useStateProviderValue();
+  const [{ u_token }, dispatch] = useStateProviderValue();
 
   React.useEffect(() => {
     const access_tokens = token()
@@ -21,7 +19,7 @@ function App() {
         type: "SET_TOKEN",
         token: tokens
       })
-      settoken(tokens)
+      
       spotifyApi.setAccessToken(tokens);
       spotifyApi.getMe()
         .then(user => {
@@ -35,11 +33,11 @@ function App() {
       spotifyApi.getUserPlaylists()
         .then((playlist) => {
           dispatch({
-            type: "PLAYLIST",
-            playlists: playlist,
+            type: "USER_PLAYLIST",
+            user_playlists: playlist,
           });
         })
-      fetch('https://api.spotify.com/v1/me/player/recently-played', {
+      fetch('https://api.spotify.com/v1/me/player/recently-played?limit=5', {
         headers: {
           'Authorization': 'Bearer ' + tokens
         },

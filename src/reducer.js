@@ -1,13 +1,14 @@
 export const intialState = {
     user: null,
     u_token: null,
-    playlists: [],
+    user_playlists: [],
     playing: false,
     item: null,
     Recently_played: [],
     active: "Home",
     serach: [],
-    play_list_id: ''
+    play_list_id: '',
+    playlist:null
 }
 //BQChnWmJhXIWTVL6ieBQCXWlO7Sj6bF60sY67Y05QFph5U4Qx5cugW014NUgcPNoOv93tMhCAEU7Wjc6PNjgK2UT37V9tjgqs5iy_CJsto2_2w69zueOYLt1CHMbUV-Dha5i0uzMfWk2HJTw43yxvftqcGk1Pzw
 const reducer = (state, action) => {
@@ -30,10 +31,14 @@ const reducer = (state, action) => {
             return {
                 ...state, user: action.user
             }
-        case "PLAYLIST":
+        case "USER_PLAYLIST":
             return {
                 ...state,
-                playlists: action.playlists
+                user_playlists: action.user_playlists
+            }
+        case "PLAYLIST":
+            return{
+                ...state,playlist:action.playlist
             }
         case "RECENTLY_PLAYES":
             return {

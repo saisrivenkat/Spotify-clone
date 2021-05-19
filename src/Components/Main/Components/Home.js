@@ -19,13 +19,18 @@ const playlists = [
         id: "37i9dQZF1DX3K5QRDLwfhd",
         name: "Sankranthi celebration",
         img: "https://i.scdn.co/image/ab67706f000000025a9b07d5512c073f44a4a4db"
+    },
+    {
+        id: "37i9dQZF1DX6XE7HRLM75P",
+        name: "Top Hits",
+        img: "https://i.scdn.co/image/ab67706f00000002b5dc84d63e436eba3de270b8"
     }
 ]
 const Home = () => {
     const [{ Recently_played, user, active }, dispatch] = useStateProviderValue()
     return (
         <div className="recently_played">
-            <div className="recently_played_items">
+            <div className="recently_played_items " style={{ padding: "0 10px 10px 0" }}>
                 <h3 className="text-white">Recently Played</h3>
                 <div className="Recently_played d-flex  mt-4">
                     {Recently_played ?
@@ -40,10 +45,9 @@ const Home = () => {
                         : <h1 className="text-white">no data</h1>}
                 </div>
             </div>
-            <div className="playlists">
+            <div className="playlists" style={{ padding: "0 10px 10px 0" }}>
                 <h2 className="mb-3 mt-3">Playlist</h2>
                 <div className="playlist d-flex">
-
                     {playlists.map((item) => (
                         <div className="card  " style={{ width: "13rem", backgroundColor: "#181818", marginLeft: "15px" }} onClick={() => {
                             dispatch({
@@ -62,10 +66,7 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-
-
             </div>
-
         </div>
     )
 }
