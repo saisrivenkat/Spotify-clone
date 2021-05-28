@@ -14,7 +14,6 @@
      margin:5px 10px;
      border-radius:5px;
      cursor:pointer
-
 }
 .item .text{
     color:#B3B3B3;
@@ -32,3 +31,28 @@
 .active>.text , .active>.icons{
     color:white
 }
+.playlist_item{
+    padding:0 30px 0;
+    cursor: pointer;
+}
+.playlist_item:hover > p{
+    color: white !important;
+}
+.user_playlist::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  
+  .user_playlist::-webkit-scrollbar-track {
+      background: black; 
+    }
+     
+
+    .user_playlist::-webkit-scrollbar-thumb {
+      background: #888; 
+    }
+    
+   
+    .user_playlist::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }

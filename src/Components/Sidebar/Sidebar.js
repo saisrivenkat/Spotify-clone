@@ -26,10 +26,10 @@ const Sidebar = () => {
                 {
                     items.map(item => (
                         <SidebarItems
-                        id={item.id}
-                        name={item.name}
-                        icon ={item.icon}
-                         />
+                            id={item.id}
+                            name={item.name}
+                            icon={item.icon}
+                        />
                     ))
                 }
                 <div className="library mb-1" style={{ padding: "10px 20px", margin: "0 10px", borderRadius: "5px" }}>
@@ -40,13 +40,26 @@ const Sidebar = () => {
                     <span className="text" style={{ color: "#B3B3B3", margin: "0 0 0 10px" }}>Liked Songs</span>
                 </div>
             </div>
-            {user_playlists.items ?
-                user_playlists.items.map((item) => (
-                    <p>{item.name}</p>
-                ))
-                : <h1>Not loaded...</h1>}
+            <hr style={{ color: "#B3B3B3", margin: "0 15px", }} />
+            <div className="user_playlist" style={{ margin: "10px 0", height: "180px", overflowY: "scroll" }}>
+                {user_playlists.items ?
+                    user_playlists.items.map((item) => (
+                        <div className="playlist_item" style={{ color: "#B3B3B3" }} onClick={() => {
+                            dispatch({
+                                type: "USER_PLAYLIST_ID",
+                                user_playlist_id: item.id
+                            })
+                        }}  >
+                            <p>{item.name}</p>
+                        </div>
+                    ))
+                    : <h1>Not loaded...</h1>}
+            </div>
         </div>
     )
 }
 
 export default Sidebar
+/*
+
+*/

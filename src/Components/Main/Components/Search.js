@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useStateProviderValue } from '../../../StateProvider'
 const Search = () => {
-    const [query, setquery] = useState('')
-    const [{ u_token, search }, dispatch] = useStateProviderValue()
+
+    const [{ u_token, search, query }, dispatch] = useStateProviderValue()
     useEffect(() => {
         search_fetch()
     }, [query])
@@ -24,17 +24,30 @@ const Search = () => {
                 })
         }
     }
+    const handlechange = (img, name, duration) => {
+        const songobj = {
+            img: img,
+            title: name,
+            duration: duration
+        }
+        dispatch({
+            type:"SET_CURRENT_PLAYING",
+            set_current_playing:songobj
+        })
+        console.log(songobj)
+    }
     return (
         <div className="search">
-            <input type="text" onChange={(e) => setquery(e.target.value)} placeholder="search..." />
-            <div className="songs p-3" >
+            <div className="songs p-2" >
 
                 {search ?
                     <div>
                         <h3>Songs</h3>
                         {search.tracks.items.map((item) => (
-                            <div className="songs-render" style={{ display: "flex", flexDirection: "column" }}>
-                                <div className="song-item" style={{ display: "flex", padding: "10px", justifyContent: "space-between" }}>
+                            <div className="songs-render" style={{ display: "flex", flexDirection: "column", cursor: "pointer" }} >
+                                <div className="song-item" style={{ display: "flex", padding: "10px", justifyContent: "space-between" }}
+                                    onClick={() => handlechange(item.album.images[2], item.name, item.duration_ms)}
+                                >
                                     <div style={{ display: "flex" }}>
                                         <img src={item.album.images[2].url} alt={item.name} />
                                         <div style={{ display: "flex", flexDirection: "column" }}>

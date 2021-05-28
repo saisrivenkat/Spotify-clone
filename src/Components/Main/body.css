@@ -11,3 +11,20 @@
 .body::-webkit-scrollbar {
     display: none;
   }
+.symbol{
+    display: none;
+}
+tr{
+    cursor: pointer;
+}
+tr:hover  {
+background-color: #3f3d3d;
+cursor: pointer;
+
+}
+tr:hover .symbol{
+    display: block;
+}
+tr:hover .num{
+    display: none;
+}
