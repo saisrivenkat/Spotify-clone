@@ -1,5 +1,5 @@
 const url = "https://accounts.spotify.com/authorize"
-const redirection = 'http://localhost:3000/'
+const redirection = 'https://60b38bdaf776afad84445553--infallible-shirley-d6b11e.netlify.app/'
 const client_id = '4ea348ebe4a440739184a892353c2153'
 const scopes = [
     "playlist-read-private",
