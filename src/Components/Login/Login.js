@@ -1,7 +1,10 @@
 import React from 'react'
 import './Login.css'
 import { login } from './LoginEndPoint'
-const Login = () => {
+const Login = ({setcurrentstate}) => {
+    const ChangeState=()=>{
+        setcurrentstate('youtube');
+    }
     return (
         <div className="login text-center">
             <img
@@ -10,6 +13,10 @@ const Login = () => {
             />
             <h3 className="text-white mb-5">Want to listen Music</h3>
             <a href={login} className="" >Login</a>
+            <div>
+        <h1>Want Youtube</h1>
+<button onClick={ChangeState}>Click here</button>
+        </div>
         </div>
     )
 }
