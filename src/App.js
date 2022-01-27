@@ -9,6 +9,7 @@ const spotifyApi = new SpotifyWebApi();
 
 function App() {
   const [{ u_token }, dispatch] = useStateProviderValue();
+  const [currentstate,setcurrentstate] = React.useState('spotify');
 
   React.useEffect(() => {
     const access_tokens = token()
@@ -53,10 +54,9 @@ function App() {
   }, [])
   return (
     <div className="App">
-      {u_token ?
-        <Main spotifyApi={spotifyApi} /> :
-        <Login />
-      }
+        {currentstate === 'youtube'?<Youtube>:u_token ?
+        <Main spotifyApi={spotifyApi} setcurrentstate={setcurrentstate}  /> :
+        <Login />}
     </div>
   );
 }
