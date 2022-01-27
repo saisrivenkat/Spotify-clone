@@ -54,8 +54,8 @@ function App() {
   }, [])
   return (
     <div className="App">
-        {currentstate === 'youtube'?<Youtube>:u_token ?
-        <Main spotifyApi={spotifyApi} setcurrentstate={setcurrentstate}  /> :
+    {u_token ?
+        <Main spotifyApi={spotifyApi} setcurrentstate={setcurrentstate}  /> : currentstate==='youtube'?<Youtube/>:
         <Login />}
     </div>
   );
